@@ -12,7 +12,7 @@ export default function Main() {
             console.log('JoinedPeers:', await plugin.getJoinedPeers())
 
             console.log('Sending chat message');
-            await plugin.sendChatMessage("Checkmate! Rohan rekd Abhishek in just 4 moves!");
+            await plugin.sendChatMessage("Hello, this message is from a plugin!");
         });
         plugin.on(Events.peerJoined, (peer) => {
             console.log('Peer joined: ', peer);
