@@ -111,7 +111,6 @@ plugin.on(Events.initialized, async () => {
     // The plugin has been initialized.
 });
 
-
 plugin.on(Events.peerJoined, (peer) => {
     // The participant `peer` has joined.
 });
