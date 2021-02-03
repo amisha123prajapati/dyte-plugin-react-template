@@ -86,7 +86,7 @@ npm start
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Once you have started the `dev` server using `npm start`, open `http://staging.dyte.in`, and use the `LocalhostDev` plugin. You will now be able to see your plugin inside the meeting (this will be accessible only from `localhost`).
+Once you have started the `dev` server using `npm start`, open `http://staging.dyte.in`, and use the `LocalhostDev` plugin. You will now be able to see your plugin inside the meeting stage (this will be accessible only from `localhost`).
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -98,7 +98,7 @@ See the [open issues](https://github.com/dyte-in/dyte-plugin-react-template/issu
 
 In this repo, the file [src/App.tsx](./src/App.tsx) sets up `react-router` to redirect all requests to `/main` to the `<Main />` component, which is located in [src/views/main/Main.tsx](src/views/main/Main.tsx).
 
-Inside [Main.tsx](src/views/main/Main.tsx), the `dyte-plugin-sdk` library is imported, and a new plugin is initialized using the following line:
+In [Main.tsx](src/views/main/Main.tsx), the `dyte-plugin-sdk` library is imported, and a new plugin is initialized using the following line:
 
 ```ts
 const plugin = useRef<DytePlugin>(new DytePlugin(PLUGIN_ID)).current;
