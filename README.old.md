@@ -1,1 +1,0 @@
-# dyte-plugin-react-template
