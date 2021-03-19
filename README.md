@@ -96,7 +96,7 @@ See the [open issues](https://github.com/dyte-in/dyte-plugin-react-template/issu
 
 ## dyte-plugin-sdk
 
-In this repo, the file [src/App.tsx](./src/App.tsx) sets up `react-router` to redirect all requests to `/main` to the `<Main />` component, which is located in [src/views/main/Main.tsx](src/views/main/Main.tsx).
+In this repo, the file [src/App.tsx](./src/App.tsx) sets up `react-router` to redirect all requests to the `<Main />` component, which is located in [src/views/main/Main.tsx](src/views/main/Main.tsx).
 
 In [Main.tsx](src/views/main/Main.tsx), the `dyte-plugin-sdk` library is imported, and a new plugin is initialized using the following line:
 
