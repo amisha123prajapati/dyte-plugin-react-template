@@ -26,16 +26,18 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contributors](#contributors-)
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [dyte-plugin-sdk](#dyte-plugin-sdk)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
 
 
 
@@ -148,17 +150,38 @@ plugin.on(Events.pluginEvent, (data) => {
 });
 
 
-// Stores data temporarily on the dyte meeting. (You can store only small amounts of data).
-plugin.storeData(data);
+// We can also use "stores" to store data about a plugin that
+// can be set and retrieved by all other users in the room using
+// the same plugin sdk
 
-// This also triggers an event, so that the other peers may directly get the newly stored data.
-plugin.on(Events.pluginData, (data) => {
-    // Use data here.
+// Stores are like "databases" to store your plugin data. You can create
+// multiple plugin stores, and each store can store key value pairs which
+// is shared across all the instances of the plugin in a meeting.
+const store = plugin.store("TST");
+
+// View the whole store
+console.log(store.getAll());
+
+// Get a single key from the store
+console.log(store.get("hello"));
+
+// set keys on a store
+store.set("hello", "test123")
+store.set("another", "value");
+
+// Subscribe for changes on a key in the store (the above set will also trigger a subscribe change here)
+store.subscribe("hello", (data) => {
+    // data has the whole store
+    console.log(data);
 });
 
+// You can make multiple stores to seperate different kinds of data!
+const anotherStore = plugin.store("Hello");
+anotherStore.set("anotherKey", "anotherValue");
+anotherStore.subscribe("anotherKey", (data) => {
+    console.log(data);
+});
 
-// Get data that has been stored on the meeting.
-plugin.getData();
 ```
 
 
