@@ -67,7 +67,7 @@ You will need the following:
 1. Clone the repo
 ```sh
 git clone https://github.com/dyte-in/dyte-plugin-react-template.git
-cd 
+cd dyte-plugin-react-template
 ```
 2. Install NPM packages
 ```sh
